@@ -11,23 +11,23 @@ class HomeController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @post.destroy
 
     redirect_to '/'
   end
 
   def read
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
 
   end
 
   def update
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
   end
 
   def real_update
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @post.title = params[:title]
     @post.content = params[:content]
     @post.save

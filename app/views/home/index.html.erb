@@ -24,12 +24,12 @@
   </form>
   <h2>글잔치</h2>
   <% @posts.each do |post| %>
-      <div class = 'kuboon'>
-        <h3><%=post.title%></h3>
-        <p><%=post.content%></p>
-        <a href = '/home/read/<%=post.id%>'>읽기</a>
-        <a href = '/home/update/<%=post.id%>'>수정하기</a>
-        <a href = '/home/destroy/<%=post.id%>'>삭제하기</a>
-      </div>
+    <div class = 'kuboon'>
+      <h3><%=post.title%></h3>
+      <p><%=post.content%></p>
+      <a href = '/home/read/<%=post.id%>'>읽기</a>
+      <a href = '/home/update/<%=post.id%>'>수정하기</a>
+      <a href = '/home/destroy/<%=post.id%>'>삭제하기</a>
+    </div>
   <% end %>
 </div>
