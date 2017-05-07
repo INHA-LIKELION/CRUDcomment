@@ -30,6 +30,17 @@
       <a href = '/home/read/<%=post.id%>'>읽기</a>
       <a href = '/home/update/<%=post.id%>'>수정하기</a>
       <a href = '/home/destroy/<%=post.id%>'>삭제하기</a>
+
+      <form method= "get" action = "/home/<%= post.id %>/reply_create">
+        <div class="form-group">
+          <label for="title">댓글</label>
+          <input type="text" class="form-control" id="title" name = "title" placeholder="title">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <% post.comments.each do |c| %>
+          <%= c.title %>
+      <% end %>
     </div>
   <% end %>
 </div>

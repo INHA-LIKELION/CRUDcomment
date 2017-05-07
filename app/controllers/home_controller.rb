@@ -19,7 +19,6 @@ class HomeController < ApplicationController
 
   def read
     @post = Post.find(params[:id])
-
   end
 
   def update
@@ -32,5 +31,26 @@ class HomeController < ApplicationController
     @post.content = params[:content]
     @post.save
     redirect_to '/'
+  end
+
+  def comment_create
+    @comment = Comment.new(post_id:params[:post_id], title:params[:title], content:params[:content])
+    @comment.save
+
+    redirect_to :back
+  end
+
+  def comment_destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    redirect_to :back
+  end
+
+  def reply_create
+    @comment = Comment.new(post_id:params[:post_id], title:params[:title])
+    @comment.save
+
+    redirect_to :back
   end
 end
